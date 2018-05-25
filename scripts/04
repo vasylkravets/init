@@ -1,0 +1,10 @@
+#!/bin/bash
+crontab -l > temp
+echo "@midnight \
+    C1=\"\$(md5sum /etc/crontab | awk '{ print \ $1 }')\" && \
+    C2=\"\$(cat /etc/crontab.log)\" && \
+    if [ '\$C1' != '$\C2' ] ; then \
+        md5sum /etc/crontab | awk '{ print \$1 }' > /etc/crontab.log && \
+        mail -s '/etc/crontab modified' root@gmail.com ; fi" >> temp
+sudo crontab temp
+rm temp

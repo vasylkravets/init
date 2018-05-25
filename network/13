@@ -1,0 +1,2 @@
+#type of server(DNS = ns1.unit.ua)
+nslookup 10.51.1.253

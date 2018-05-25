@@ -1,0 +1,3 @@
+#generate key with (ssh-keygen)
+#/.ssh/id_rsa - private key
+#/.ssh/id_rsa_pub

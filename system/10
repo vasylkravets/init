@@ -1,0 +1,3 @@
+#!/bin/bash
+#ls /dev
+sudo fdisk -l
